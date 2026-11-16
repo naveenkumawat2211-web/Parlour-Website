@@ -18,13 +18,13 @@
 * {
   box-sizing: border-box;
 }
-html {
-  scroll-behavior: smooth;
-}
-body {
+html,body {
+  overflow-x: hidden;
   margin: 0;
   min-width: 320px;
+  scroll-behavior: smooth;
 }
+
 a {
   text-decoration: none;
   color: inherit;
