@@ -1,0 +1,133 @@
+export const SALON = {
+  name: "Khushi Beauty Parlour",
+  city: "Nizamabad, Telangana",
+  contactPerson: "Prerana Kumawat",
+  phone: "9182252287",
+  whatsapp: "919182252287",
+};
+
+export const initialServices = [
+  {
+    id: "s1",
+    name: "Special Facial",
+    category: "Facial",
+    description: "Personalised facial care selected for your skin type.",
+    price: "",
+    duration: "60 min",
+    active: true,
+  },
+  {
+    id: "s2",
+    name: "Fruit Facial",
+    category: "Facial",
+    description: "A refreshing facial experience with fruit-based products.",
+    price: "",
+    duration: "50 min",
+    active: true,
+  },
+  {
+    id: "s3",
+    name: "Gold Facial",
+    category: "Facial",
+    description: "A premium facial service for a refreshed look.",
+    price: "",
+    duration: "60 min",
+    active: true,
+  },
+  {
+    id: "s4",
+    name: "Pearl Facial",
+    category: "Facial",
+    description: "A facial option tailored to your needs.",
+    price: "",
+    duration: "60 min",
+    active: true,
+  },
+  {
+    id: "s5",
+    name: "Bleach",
+    category: "Skin Care",
+    description:
+      "Skin-care service. Consultation recommended before treatment.",
+    price: "",
+    duration: "30 min",
+    active: true,
+  },
+  {
+    id: "s6",
+    name: "Eyebrow",
+    category: "Threading",
+    description: "Eyebrow shaping and grooming.",
+    price: "",
+    duration: "15 min",
+    active: true,
+  },
+  {
+    id: "s7",
+    name: "Haircut",
+    category: "Hair",
+    description: "Haircut and styling consultation.",
+    price: "",
+    duration: "30 min",
+    active: true,
+  },
+  {
+    id: "s8",
+    name: "U Cut / Step Cut / Feather Cut",
+    category: "Hair",
+    description: "Choose a haircut style that suits you.",
+    price: "",
+    duration: "45 min",
+    active: true,
+  },
+  {
+    id: "s9",
+    name: "Manicure",
+    category: "Nail Care",
+    description: "Hand and nail grooming service.",
+    price: "",
+    duration: "35 min",
+    active: true,
+  },
+  {
+    id: "s10",
+    name: "Pedicure",
+    category: "Nail Care",
+    description: "Foot and nail grooming service.",
+    price: "",
+    duration: "40 min",
+    active: true,
+  },
+  {
+    id: "s11",
+    name: "Half Hands + Half Legs",
+    category: "Waxing",
+    description: "Grooming service. Confirm product and price at the salon.",
+    price: "",
+    duration: "45 min",
+    active: true,
+  },
+  {
+    id: "s12",
+    name: "Underarms",
+    category: "Waxing",
+    description: "Personal grooming service.",
+    price: "",
+    duration: "15 min",
+    active: true,
+  },
+];
+
+export const initialStylists = [
+  {
+    id: "st1",
+    name: "Prerana Kumawat",
+    role: "Beauty Professional",
+    bio: "Ask our team about the right service for your needs.",
+  },
+];
+
+export const defaultAdmin = {
+  email: "admin@khushibeauty.com",
+  password: "123456",
+};
