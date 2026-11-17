@@ -1,9 +1,9 @@
 export const SALON = {
   name: "Khushi Beauty Parlour",
-  city: "Nizamabad, Telangana",
-  contactPerson: "Prerana Kumawat",
-  phone: "917597386371",
-  whatsapp: "917597386371",
+  phone: "7597386371", // Apna sahi phone number yahan daalein
+  whatsapp: "917597386371", // Aage 91 laga kar likhein
+  address: "Gudha Gorji, Rajasthan",
+  timing: "10:00 AM - 07:00 PM",
 };
 
 export const initialServices = [

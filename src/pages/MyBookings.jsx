@@ -193,7 +193,7 @@ export default function Booking() {
               <input
                 name="name"
                 required
-                value={form.name}
+                value={form.name} 
                 onChange={update}
                 placeholder="Enter your name"
                 className="w-full px-4 py-2.5 rounded-lg bg-[#1c0d0d] border border-[#3d2323] text-white focus:outline-none focus:border-[#d4a373]"
@@ -228,7 +228,7 @@ export default function Booking() {
               >
                 <option value="">Choose a service</option>
                 {services.map((s) => (
-                  <option key={s.id} value={s.name}>
+                  <option key={s.id} value={s.name}> 
                     {s.name}
                   </option>
                 ))}
