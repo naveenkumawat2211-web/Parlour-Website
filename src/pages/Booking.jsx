@@ -188,7 +188,7 @@ export default function Booking() {
           )}
           {error && <p className="form-error">{error}</p>}
           <button className="button button-dark w-full" type="submit">
-            Submit Appointment Request
+            Submit Appointment Request 
           </button>
           <small className="form-disclaimer">
             Submitting does not confirm a slot. The salon must confirm your

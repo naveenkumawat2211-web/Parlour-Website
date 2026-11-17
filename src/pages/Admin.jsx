@@ -32,14 +32,18 @@ export function AdminLogin() {
   const [password, setPassword] = useState("123456");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+
   function submit(e) {
     e.preventDefault();
     const admin = getAdmin();
     if (email === admin.email && password === admin.password) {
       setAdminSession(true);
       navigate("/admin");
-    } else setError("Email or password is incorrect.");
+    } else {
+      setError("Email or password is incorrect.");
+    }
   }
+
   return (
     <section className="admin-login-wrap">
       <form className="admin-login" onSubmit={submit}>
@@ -91,34 +95,41 @@ export function AdminDashboard() {
     duration: "30 min",
   });
   const [editingId, setEditingId] = useState(null);
+
   useEffect(() => {
     saveServices(services);
   }, [services]);
+
   useEffect(() => {
     saveAppointments(appointments);
   }, [appointments]);
+
   const paid = payments
     .filter((p) => p.status === "Success")
     .reduce((n, p) => n + Number(p.amount || 0), 0);
+
   if (!isAdminLoggedIn()) return <Navigate to="/admin/login" replace />;
+
   function logout() {
     clearAdminSession();
     navigate("/admin/login");
   }
+
   function saveService(e) {
     e.preventDefault();
     if (!serviceForm.name.trim()) return;
-    if (editingId)
+    if (editingId) {
       setServices(
         services.map((s) =>
           s.id === editingId ? { ...s, ...serviceForm } : s,
         ),
       );
-    else
+    } else {
       setServices([
         { id: makeId(), ...serviceForm, active: true },
         ...services,
       ]);
+    }
     setServiceForm({
       name: "",
       category: "Facial",
@@ -129,6 +140,7 @@ export function AdminDashboard() {
     setEditingId(null);
     setNotice("Service saved.");
   }
+
   function editService(s) {
     setEditingId(s.id);
     setServiceForm({
@@ -139,15 +151,19 @@ export function AdminDashboard() {
       duration: s.duration || "",
     });
   }
+
   function deleteService(id) {
-    if (confirm("Delete this service?"))
+    if (confirm("Delete this service?")) {
       setServices(services.filter((s) => s.id !== id));
+    }
   }
+
   function updateStatus(id, status) {
     setAppointments(
       appointments.map((a) => (a.id === id ? { ...a, status } : a)),
     );
   }
+
   function mockPayment() {
     const amount = prompt(
       "Enter test payment amount in rupees (demo only):",
@@ -169,11 +185,13 @@ export function AdminDashboard() {
     savePayments(next);
     setNotice("Mock payment record added. No real money was collected.");
   }
+
   function saveBusiness(e) {
     e.preventDefault();
     saveSalon(salon);
     setNotice("Salon details saved in this browser.");
   }
+
   const tabs = [
     { name: "Overview", icon: LayoutDashboard },
     { name: "Services", icon: Scissors },
@@ -181,6 +199,7 @@ export function AdminDashboard() {
     { name: "Payments", icon: IndianRupee },
     { name: "Settings", icon: Settings },
   ];
+
   return (
     <>
       <PageHero
@@ -526,6 +545,7 @@ function Stat({ icon: Icon, label, value }) {
     </div>
   );
 }
+
 function BookingTable({ appointments, onStatus }) {
   return (
     <div className="table-wrap">

@@ -8,6 +8,7 @@ const links = [
   ["Home", "/"],
   ["About", "/about"],
   ["Services", "/services"],
+  ["Packages", "/packages"],
   ["Our Team", "/team"],
   ["Book Appointment", "/book"],
 ];
@@ -78,11 +79,11 @@ export default function Layout() {
         </Link>
 
         <Link
-          to="/admin/login"
+          to="/my-bookings"
           className="button button-rose flex items-center gap-2"
         >
           <ShieldCheck size={19} />
-          <span>Admin Login</span>
+          <span> MY Bookings </span>
         </Link>
       </header>
       <motion.main
@@ -114,6 +115,12 @@ export default function Layout() {
             <h4>Explore</h4>
             <Link to="/about">About us</Link>
             <Link to="/services">Services</Link>
+            <Link
+              to="/packages"
+              className="hover:text-[#d4a373] transition-colors"
+            >
+              PACKAGES
+            </Link>
             <Link to="/team">Our team</Link>
             <Link to="/book">Book appointment</Link>
           </div>

@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 
 
+
 const serviceImages = {
   "Special Facial":
     "https://images.unsplash.com/photo-1731355771317-b2ab72c79124?w=800",

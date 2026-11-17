@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+
 import {
   ArrowRight,
   CalendarCheck,
@@ -10,6 +11,7 @@ import {
 } from "lucide-react";
 import { SectionHeading, ServiceCard } from "../components/UI";
 import { getSalon, getServices } from "../utils/storage";
+import Packages from "./Packages";
 
 export default function Home() {
   const salon = getSalon();
@@ -156,6 +158,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Packages />
+
       <section className="section container">
         <SectionHeading
           eyebrow="READY WHEN YOU ARE"
@@ -172,6 +176,7 @@ export default function Home() {
           </Link>
         </div>
       </section>
+      {/* <Packages /> */}
     </>
   );
 }
