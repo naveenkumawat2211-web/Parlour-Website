@@ -1,6 +1,6 @@
 export const SALON = {
   name: "Khushi Beauty Parlour",
-  city: "Gudha gorji,Jhunjhunu,Rajasthan",
+  city: "Gudha Gorji, Jhunjhunu, Rajasthan",
   contactPerson: "Prerana Kumawat",
   phone: "917597386371",
   whatsapp: "917597386371",
