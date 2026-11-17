@@ -1,6 +1,14 @@
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import { MapPin, Menu, MessageCircle, Phone, Scissors, ShieldCheck, X } from "lucide-react";
+import {
+  MapPin,
+  Menu,
+  MessageCircle,
+  Phone,
+  Scissors,
+  ShieldCheck,
+  X,
+} from "lucide-react";
 import { useState } from "react";
 import { getSalon } from "../utils/storage";
 
@@ -45,7 +53,7 @@ export default function Layout() {
           <Phone size={13} /> {salon.phone}
         </a>
       </div>
-      <header className="site-header">
+      <header className="site-header flex items-center justify-between flex-wrap gap-2">
         <Link to="/" className="brand" onClick={() => setOpen(false)}>
           <span className="brand-mark">
             <Scissors size={23} />
@@ -55,14 +63,35 @@ export default function Layout() {
             <small>BEAUTY • CARE • CONFIDENCE</small>
           </span>
         </Link>
-        <button
-          className="mobile-menu"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle navigation"
-        >
-          {open ? <X /> : <Menu />}
-        </button>
-        <nav className={open ? "nav-links nav-open" : "nav-links"}>
+
+        <div className="flex items-center gap-2 ml-auto md:ml-0">
+          {/* My Bookings Button: Mobile me sirf icon, Desktop me pura text */}
+          <Link
+            to="/my-bookings"
+            className="button button-rose flex items-center justify-center p-2.5 md:px-4 md:py-2"
+            title="My Bookings"
+          >
+            <ShieldCheck size={20} />
+            <span className="hidden md:inline ml-2">MY Bookings</span>
+          </Link>
+
+          <Link
+            to="/book"
+            className="button button-dark header-cta hidden sm:inline-block"
+          >
+            Book Now
+          </Link>
+
+          <button
+            className="mobile-menu"
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle navigation"
+          >
+            {open ? <X /> : <Menu />}
+          </button>
+        </div>
+
+        <nav className={open ? "nav-links nav-open w-full" : "nav-links"}>
           {links.map(([label, path]) => (
             <NavLink
               key={path}
@@ -74,18 +103,8 @@ export default function Layout() {
             </NavLink>
           ))}
         </nav>
-        <Link to="/book" className="button button-dark header-cta">
-          Book Now
-        </Link>
-
-        <Link
-          to="/my-bookings"
-          className="button button-rose flex items-center gap-2"
-        >
-          <ShieldCheck size={19} />
-          <span> MY Bookings </span>
-        </Link>
       </header>
+
       <motion.main
         key={location.pathname}
         initial={{ opacity: 0, y: 12 }}
@@ -94,6 +113,7 @@ export default function Layout() {
       >
         <Outlet />
       </motion.main>
+
       <footer className="footer">
         <div className="footer-main">
           <div>
