@@ -12,6 +12,7 @@ import {
 import { SectionHeading, ServiceCard } from "../components/UI";
 import { getSalon, getServices } from "../utils/storage";
 import Packages from "./Packages";
+import BridalPackages from "./BridalPackages";
 
 export default function Home() {
   const salon = getSalon();
@@ -130,6 +131,8 @@ export default function Home() {
           </Link>
         </div>
       </section>
+<BridalPackages/>
+
       <section className="about-band">
         <div className="container about-band-grid">
           <div className="about-art">
